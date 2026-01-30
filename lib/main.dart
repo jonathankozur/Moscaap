@@ -36,11 +36,16 @@ class _MapScreenState extends State<MapScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-              'Asegúrate de configurar tus API Keys de Google Maps en Android, iOS y Web.'),
-          duration: Duration(seconds: 5),
-          backgroundColor: Colors.orange,
+        SnackBar(
+          content: const Text(
+              'Configuración necesaria: Reemplaza "YOUR_..._API_KEY_HERE" en los archivos del proyecto (ver README.md).'),
+          duration: const Duration(seconds: 10),
+          backgroundColor: Colors.deepOrange,
+          action: SnackBarAction(
+            label: 'OK',
+            textColor: Colors.white,
+            onPressed: () {},
+          ),
         ),
       );
     });
