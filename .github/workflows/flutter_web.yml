@@ -34,9 +34,8 @@ jobs:
         run: flutter pub get
 
       - name: Build Web
-        # Note: If deploying to a subpath (e.g. https://<user>.github.io/<repo>/),
-        # you should add --base-href /<repo>/ to the build command.
-        run: flutter build web --release
+        # Automatically set the base-href to the repository name for GitHub Pages
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
