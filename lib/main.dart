@@ -31,6 +31,21 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+              'Asegúrate de configurar tus API Keys de Google Maps en Android, iOS y Web.'),
+          duration: Duration(seconds: 5),
+          backgroundColor: Colors.orange,
+        ),
+      );
+    });
+  }
+
   final List<LatLng> _polygonPoints = [];
   List<LatLng> _zigzagPath = [];
   List<LatLng> _releasePoints = [];
