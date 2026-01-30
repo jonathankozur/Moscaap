@@ -38,9 +38,9 @@ class _MapScreenState extends State<MapScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text(
-              'Configuración necesaria: Reemplaza "YOUR_..._API_KEY_HERE" en los archivos del proyecto (ver README.md).'),
-          duration: const Duration(seconds: 10),
-          backgroundColor: Colors.deepOrange,
+              'Bienvenido al Planificador de Ruta Zigzag. Toca el mapa para comenzar.'),
+          duration: const Duration(seconds: 4),
+          backgroundColor: Colors.blue,
           action: SnackBarAction(
             label: 'OK',
             textColor: Colors.white,
