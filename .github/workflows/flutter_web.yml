@@ -34,8 +34,8 @@ jobs:
         run: flutter pub get
 
       - name: Build Web
-        # Automatically set the base-href to the repository name for GitHub Pages
-        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+        # Use relative base-href for better compatibility with GitHub Pages subpaths
+        run: flutter build web --release --base-href "./"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
